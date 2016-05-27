@@ -70,7 +70,7 @@ class Cookie
         $this->secure = (bool) $secure;
         $this->httponly = (bool) $httponly;
 
-        if (null !== $expires) {
+        if ($expires) {
             $timestampAsDateTime = \DateTime::createFromFormat('U', $expires);
             if (false === $timestampAsDateTime) {
                 throw new \UnexpectedValueException(sprintf('The cookie expiration time "%s" is not valid.', $expires));
