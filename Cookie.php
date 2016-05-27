@@ -72,7 +72,7 @@ class Cookie
 
         if (null !== $expires) {
             $timestampAsDateTime = \DateTime::createFromFormat('U', $expires);
-            if (false === $timestampAsDateTime) {
+            if (false == $timestampAsDateTime) {
                 throw new \UnexpectedValueException(sprintf('The cookie expiration time "%s" is not valid.', $expires));
             }
 
